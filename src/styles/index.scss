@@ -1,7 +1,66 @@
-body{
-  background-color: rgb(155, 127, 255);
-  color: rgb(0, 0, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  /* Color-Background */  
+  --color-bg--main: #ffffff;
+  --color-bg--secondary: #F5FBFC;
+
+  /* Color-Brand */
+  --color-accent-primary: #35b8be;
+  --color-accent-primary-hover: rgba(53, 184, 190, 0.7);
+  --color-light: #ffffff;
+  --color-footer-bg: #F5FBFC;
+
+  /* Color-Text */
+  --color-text-header: #28224b;
+  --color-text-paragraph: #546285;
+  --color-text-secondary: #222222;
+  --color-text-light: #ffffff;
+  --color-text-title-dark: #08090a;
+
+  /* Color-Btn */
+  --color-button-primary-bg: #35b8be;
+  --color-button-primary-hover-bg: rgba(53, 184, 190, 0.7);
+  --color-button-primary-focus-bg: rgb(156, 244, 249);
+  --color-button-primary-text: #ffffff;
+
+  --color-button-secondary-bg: transparent;
+  --color-button-secondary-text: #222222;
+  --color-button-secondary-border-color: rgba(97, 114, 131, 20%);
+
+  /* Color-Card */
+  --color-cards-bg-color: #ffffff;
+  --color-cards-border-color: rgba(53, 184, 190, 15%);
+
+  /* Color-Input */
+  --color-input-text: #000000;
+  --color-input-bg: #fafafa;
+  --color-input-border: #dddddd;
+  --color-input-border-hover: #35b8be;
+  --color-input-border-focus: #35b8be;
+}
+
+/* Typography */
+
+.h1 {
+  color: var(--color-accent-primary);
+  font-size: 3.125rem;
+  font-weight: 400;
+  line-height: 3.437rem;
+  letter-spacing: 0.103rem;
+}
+
+.primary__text {
+  color: var(--color-text-paragraph);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.687rem;
+  letter-spacing: 0.023rem;
+  text-align: center;
+  margin-top: 1.25rem;
+  max-width: 29.125rem;
 }

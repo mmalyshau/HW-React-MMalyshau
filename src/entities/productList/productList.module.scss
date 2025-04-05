@@ -1,0 +1,30 @@
+
+.category__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.875rem; 
+  margin-top: 3.125rem; 
+  margin-bottom: 2.5rem;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 0.4375rem; 
+
+}
+
+.product__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.25rem; 
+}
+
+.seeMore__button {
+  padding: 1rem !important; 
+  font-size: 1.0625rem; 
+  font-weight: 400;
+  line-height: 1.25rem; 
+  margin-top: 4.0625rem; 
+}

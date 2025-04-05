@@ -1,0 +1,43 @@
+.header {
+  padding: 1.25rem 7.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-light);
+
+  &__logo {
+    display: block;
+    max-width: 2.5rem;
+    width: 100%;
+    height: auto;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 6.25rem;
+
+    &__links {
+      display: flex;
+      justify-content: flex-start;
+      gap: 1rem;
+      font-size: 0.937rem;
+      line-height: 1.25rem;
+
+      .header__link {
+        color: var(--color-text-header);
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--color-accent-primary);
+        }
+      }
+    }
+  }
+}
