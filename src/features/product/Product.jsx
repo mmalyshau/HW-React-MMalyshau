@@ -21,13 +21,13 @@ export const Product = ({ product, addToCart }) => {
     
       <div className={style.productCard}>
         <div className={style.productCard__container}>
-          <img src={product.img} alt={product.alt} className={style.productCard__image} />
+          <img src={product.img} className={style.productCard__image} />
           <div className={style.productCard__details}>
             <div className={style.productCard__header}>
-              <p className={style.productCard__title}>{product.name}</p>
+              <p className={style.productCard__title}>{product.meal}</p>
               <p className={style.productCard__price}>$ {product.price} USD</p>
             </div>
-            <p className={style.productCard__description}>{product.description}</p>
+            <p className={style.productCard__description}>{product.instructions.slice(0,100)}</p>
             <div className={style.productCard__actions}>
             <Input size="medium" type="number" min={0} max={99} onChange={(event) => setQuantity(Number(event.target.value)) } />
               <Button variant="primary" size="medium" className={style.productCard__button} onClick={handleClick}>
