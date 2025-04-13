@@ -1,17 +1,31 @@
 import React from 'react';
+import { useState } from 'react';
 
-import { Header } from '@widgets/header/Header';
+import {Layout} from '@features/layout/Layout.jsx';
 import { MenuPage} from '@pages/MenuPage/MenuPage';
-import { Footer } from '@widgets/footer/Footer';
+
 
 function App() {
   
+const [cart, setCart] = useState({});
+
+function addToCart(id, quantity) {
+  setCart(prevCart => {
+    const currentQty = prevCart[id]  || 0;
+    return {
+      ...prevCart,
+      [id]: currentQty + quantity
+    };
+    
+  });
+}
+
 
   return (
     <>
-      <Header />
-      <MenuPage/>
-      <Footer />
+      <Layout cart ={cart}>
+      <MenuPage  addToCart={addToCart}/>
+      </Layout >
      
       
     </>

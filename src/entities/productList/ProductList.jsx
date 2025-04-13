@@ -4,7 +4,7 @@ import { Button } from "@ui/button/Button.jsx";
 
 import style from "./productList.module.scss";
 
-export const ProductList = () => {
+export const ProductList = ({addToCart}) => {
   return (
     <>
       <div className={style.productList__container}>
@@ -19,7 +19,7 @@ export const ProductList = () => {
         <div className={style.product__container}>
          
           {productList.map((product, index) => (
-            <Product key={index} product={product} />
+            <Product key={index} product={product} addToCart={addToCart } />
           ))}
       
   

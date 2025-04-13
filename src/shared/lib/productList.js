@@ -9,6 +9,7 @@ import BaconBuddy from "@images/products/baconBuddy.svg";
 
 export const productList = [
   new productClass(
+    0,
     BaconBuddy,
     "Bacon Buddy",
     "Bacon Buddy",
@@ -16,6 +17,7 @@ export const productList = [
     "9.99"
   ),
   new productClass(
+    1,
     Cali,
     "Cali",
     "Cali",
@@ -23,6 +25,7 @@ export const productList = [
     "8.00"
   ),
   new productClass(
+    2,
     Classic,
     "Classic",
     "Classic",
@@ -30,6 +33,7 @@ export const productList = [
     "8.00"
   ),
   new productClass(
+    3,
     Dreams,
     "Dreams",
     "Dreams",
@@ -37,6 +41,7 @@ export const productList = [
     "9.20"
   ),
   new productClass(
+    4,
     Spicy,
     "Spicy",
     "Spicy",
@@ -44,6 +49,7 @@ export const productList = [
     "9.20"
   ),
   new productClass(
+    5,
     Waldo,
     "Waldo",
     "Waldo",

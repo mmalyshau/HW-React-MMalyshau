@@ -3,7 +3,7 @@ import { Tooltip } from "@ui/tooltip/Tooltip";
 
 import style from "./menuPage.module.scss";
 
-export const MenuPage = () => {
+export const MenuPage = ({addToCart}) => {
   return (
     <section className={style.menu__section}>
       
@@ -12,7 +12,7 @@ export const MenuPage = () => {
             <div className="primary__text">Use our menu to place an order online, or <Tooltip text='+123456789'>phone</Tooltip> our store to place a pickup order. Fast and fresh food.</div>
         </div>
        
-          <ProductList />
+      <ProductList addToCart={addToCart}/>
        
         
         </section>

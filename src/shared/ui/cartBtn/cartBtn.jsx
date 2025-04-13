@@ -14,9 +14,12 @@ export const CartBtn = ({ counter}) => {
       >
         <img src={Cart} alt="cart" />
         <div className={style.counter}>
-        <p className={style.counter__val}>{ counter}</p>
+        <p className={style.counter__val}>
+        {Object.values(counter).reduce((acc, qty) => acc + Number(qty), 0)}
+        </p>
         </div>
       </Button>
  
+    
   );
 }

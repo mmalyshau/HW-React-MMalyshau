@@ -1,5 +1,6 @@
 export class productClass {
-  constructor(img, alt, name, description, price) {
+  constructor(id,img, alt, name, description, price) {
+    this.id = id;
     this.img = img;
     this.alt = alt;
     this.name = name;

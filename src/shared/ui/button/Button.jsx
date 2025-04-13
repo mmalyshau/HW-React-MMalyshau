@@ -7,14 +7,14 @@ export const Button = ({
   variant = "primary",
   size = "medium",
   className = "",
-  ...props
+  ...rest
 }) => {
   return (
     <button
       type={type}
       onClick={onClick}
       className={`${style.btn} ${style[variant]} ${style[size]} ${className}`}
-      {...props}
+      {...rest}
     >
       {children}
     </button>

@@ -5,7 +5,7 @@ import  Logo  from '@images/icons/logo.svg';
 
 import style from "./Header.module.scss";
 
-export const Header = () => {
+export const Header = ({cart}) => {
   return (
     <header className={style.header}>
       <div className={style.header__container}>
@@ -18,7 +18,7 @@ export const Header = () => {
               <a key={index} href={link.link} className={style.header__link}>{link.name}</a>
             ))}
           </div>
-          <CartBtn counter={0} />
+          <CartBtn counter={cart} />
         </nav>
       </div>
     </header>
