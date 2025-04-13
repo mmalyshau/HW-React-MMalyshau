@@ -3,7 +3,7 @@ import { Button } from "@ui/button/button";
 
 import style from "./cartBtn.module.scss";
 
-export const CartBtn = ({ val}) => {
+export const CartBtn = ({ counter}) => {
   return (
 
       <Button
@@ -14,7 +14,7 @@ export const CartBtn = ({ val}) => {
       >
         <img src={Cart} alt="cart" />
         <div className={style.counter}>
-        <p className={style.counter__val}>{ val}</p>
+        <p className={style.counter__val}>{ counter}</p>
         </div>
       </Button>
  

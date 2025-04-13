@@ -3,11 +3,11 @@ import style from "./product.module.scss";
 import { Button } from "@ui/button/button";
 import { Input } from "@ui/input/input";
 
-export const Product = ({ product, index }) => { 
+export const Product = ({ product}) => { 
 
   return (
-    <>
-      <div key={index} className={style.productCard}>
+    
+      <div className={style.productCard}>
         <div className={style.productCard__container}>
           <img src={product.img} alt={product.alt} className={style.productCard__image} />
           <div className={style.productCard__details}>
@@ -25,7 +25,7 @@ export const Product = ({ product, index }) => {
           </div>
         </div>
       </div>
-  </>
+
 
   );
 

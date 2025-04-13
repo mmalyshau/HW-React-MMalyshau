@@ -18,7 +18,7 @@ export const Header = () => {
               <a key={index} href={link.link} className={style.header__link}>{link.name}</a>
             ))}
           </div>
-          <CartBtn val={0} />
+          <CartBtn counter={0} />
         </nav>
       </div>
     </header>
