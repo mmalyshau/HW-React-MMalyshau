@@ -1,0 +1,50 @@
+input {
+  border-radius: 0.375rem;
+  border: 1px solid var(--color-input-border);
+  background: var(--color-input-bg);
+  color: var(--color-input-text);
+  font-size: 1rem;
+  letter-spacing: 0.0225rem; 
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  &[type=number] {
+    text-align: center;
+  }
+
+  &:hover {
+    border: 1px solid var(--color-input-border-hover);
+  }
+
+  &:focus {
+    border: 1px solid var(--color-input-border-focus);
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.small {
+  padding: 0.5rem; 
+  line-height: 1.6875rem; 
+  justify-content: center;
+}
+
+.medium {
+  padding: 0.625rem 0;
+  line-height: 1.5rem;
+  justify-content: center;
+}
+
+.large {
+  padding: 1rem; 
+  font-size: 1.125rem; 
+  line-height: 1.625rem; 
+  justify-content: flex-start;
+}
+
+
