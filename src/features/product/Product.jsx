@@ -24,12 +24,11 @@ export class Product extends Component {
     if (quantity > 0) {
       addToCart(product.id, quantity);
       this.setState({ quantity: 0 });
-    }
+    }  
   };
 
   render() {
     const { product } = this.props;
-    const { quantity } = this.state;
 
     return (
       <div className={style.productCard}>
