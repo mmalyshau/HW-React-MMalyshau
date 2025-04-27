@@ -1,11 +1,10 @@
-import { Component } from 'react';
 import Logo from '@images/icons/logo.svg';
 import { SocialMedia } from '@ui/socMedBtn/socMedBrn';
 
 import style from './footer.module.scss';
 
-export class Footer extends Component {
-  render() {
+export const Footer = () => {
+ 
     return (
       <footer className={style.footer}>
         <div className={style.footer__Top}>
@@ -54,4 +53,4 @@ export class Footer extends Component {
       </footer>
     );
   }
-}
+

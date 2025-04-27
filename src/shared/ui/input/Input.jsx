@@ -1,15 +1,11 @@
-import { Component } from "react";
 import style from "./input.module.scss";
 
-export class Input extends Component {
-  render() {
-    const {
-      type = "text",
-      size = "medium",
-      className = "",
-      ...rest
-    } = this.props;
-
+export const Input = ({
+  type = "text",
+  size = "medium",
+  className = "",
+  ...rest
+}) => {
     return (
       <input
         type={type}
@@ -18,4 +14,4 @@ export class Input extends Component {
       />
     );
   }
-}
+
