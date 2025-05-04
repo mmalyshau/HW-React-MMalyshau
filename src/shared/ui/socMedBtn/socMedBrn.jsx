@@ -1,3 +1,4 @@
+import { Component } from "react";
 import style from "./socMedBtn.module.scss";
 
 import Inst from "@images/icons/inst.svg";
@@ -10,16 +11,18 @@ const socialLinks = [
   { src: YouTube, alt: "YouTube", href: "https://www.youtube.com" }
 ];
 
-export function SocialMedia() {
-  return (
-    <div className={style.social__media}>
-      {socialLinks.map((social, index) => (
-        <div key={index} className={style.border}>
-          <a href={social.href} target="_blank" >
-            <img src={social.src} alt={social.alt} />
-          </a>
-        </div>
-      ))}
-    </div>
-  );
+export class SocialMedia extends Component {
+  render() {
+    return (
+      <div className={style.social__media}>
+        {socialLinks.map((social, index) => (
+          <div key={index} className={style.border}>
+            <a href={social.href} target="_blank">
+              <img src={social.src} alt={social.alt} />
+            </a>
+          </div>
+        ))}
+      </div>
+    );
+  }
 }

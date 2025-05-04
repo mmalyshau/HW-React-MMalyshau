@@ -1,24 +1,27 @@
+import { Component } from "react";
 import style from "./button.module.scss";
 
-export const Button = ({
-  children,
-  onClick,
-  type = "button",
-  variant = "primary",
-  size = "medium",
-  className = "",
-  ...props
-}) => {
-  return (
-    <button
-      type={type}
-      onClick={onClick}
-      className={`${style.btn} ${style[variant]} ${style[size]} ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-};
+export class Button extends Component {
+  render() {
+    const {
+      children,
+      onClick,
+      type = "button",
+      variant = "primary",
+      size = "medium",
+      className = "",
+      ...rest
+    } = this.props;
 
-
+    return (
+      <button
+        type={type}
+        onClick={onClick}
+        className={`${style.btn} ${style[variant]} ${style[size]} ${className}`}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+}
