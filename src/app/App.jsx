@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Layout } from '@features/layout/Layout.jsx';
-import { MenuPage } from '@pages/MenuPage/MenuPage';
+import { HomePage } from "@pages/HomePage/HomePage.jsx";
 
 function App() {
   const [cart, setCart] = useState({});
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Layout cart={cart}>
-        <MenuPage addToCart={addToCart} />
+        <HomePage />
       </Layout>
     </>
   );

@@ -7,13 +7,13 @@ export const Product = ({ product, addToCart }) => {
   const [quantity, setQuantity] = useState(0);
 
   useEffect(() => {
-    setQuantity('');
+    setQuantity(0);
   }, [product.id]);
 
   const handleClick = () => {
     if (quantity > 0) {
       addToCart(product.id, quantity);
-      setQuantity('');
+      setQuantity(0);
     }
   };
 
