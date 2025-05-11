@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 import { Layout } from '@features/layout/Layout.jsx';
 import { HomePage } from "@pages/HomePage/HomePage.jsx";
-
 function App() {
   const [cart, setCart] = useState({});
 

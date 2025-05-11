@@ -1,19 +1,29 @@
-export const useFetch = () => {
-  const fetchData = async (url) => {
-    const response = await fetch(url);
+import { useState, useEffect } from "react";
 
-    if (!response.ok) {
-      throw new Error("Cann't connect to API.");
-    }
+export function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-    return await response.json();
-  };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("Can't get data.");
+        }
+        const result = await response.json();
+        setData(result);
+        localStorage.setItem("latestReply", JSON.stringify(result));
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const fetchDataWithLogger = async (url) => {
-    return await fetchData(url).then((res) => {
-      localStorage.setItem("prevResponse", JSON.stringify(res));
-      return res;
-    });
-  };
-  return { fetchDataWithLogger, fetchData };
-};
+    fetchData();
+  }, [url]);
+
+  return { data, error, loading };
+}
