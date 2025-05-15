@@ -5,9 +5,15 @@ import '@styles/noCSS.css'
 import '@styles/index.scss'
 
 import App from './App.jsx'
+import {BrowserRouter} from "react-router-dom";
+import {AuthProvider} from "@context/authContext.jsx";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+      <BrowserRouter>
+          <AuthProvider>
+              <App />
+          </AuthProvider>
+      </BrowserRouter>
   </StrictMode>,
 )
