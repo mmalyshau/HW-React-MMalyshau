@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-
 import { Layout } from '@features/layout/Layout.jsx';
-import { HomePage } from "@pages/HomePage/HomePage.jsx";
+import { AppRoutes } from '@router/appRoutes.jsx';
+import { useState } from 'react';
+
 function App() {
   const [cart, setCart] = useState({});
 
@@ -16,11 +16,9 @@ function App() {
   }
 
   return (
-    <>
       <Layout cart={cart}>
-        <HomePage />
+        <AppRoutes  addToCart ={addToCart}/>
       </Layout>
-    </>
   );
 }
 

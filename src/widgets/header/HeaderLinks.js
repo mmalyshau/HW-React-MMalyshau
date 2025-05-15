@@ -1,11 +1,11 @@
 export const HeaderLinks = [
   {
     name: "Home",
-    link: "#",
+    link: "/",
   },
   {
     name: "Menu",
-    link: "#",
+    link: "/menu",
   },
   {
     name: "Company",
@@ -13,6 +13,6 @@ export const HeaderLinks = [
   },
   {
     name: "Login",
-    link: "#",
+    link: "/login",
   },
 ];

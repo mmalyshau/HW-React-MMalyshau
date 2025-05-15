@@ -4,6 +4,8 @@ import Banner from "@images/banner_homepage.svg";
 import TrustpilotLogo from "@images/icons/trustpilot_icon.svg"
 
 import { Button} from "@ui/button/Button.jsx";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "@context/AuthContext.jsx";
 
 const HeroSection = styled.section`
     padding: 100px 120px 140px;
@@ -96,6 +98,17 @@ const ReviewText = styled.p`
 `;
 
 export const HomePage = () => {
+    const navigate = useNavigate();
+
+    const { user } = useAuth();
+
+    const handleOrderClick = () => {
+        if (user) {
+            navigate("/menu");
+        } else {
+            navigate("/login");
+        }
+    }
     return (
         <HeroSection>
             <HeroContentWrapper>
@@ -106,7 +119,7 @@ export const HomePage = () => {
                     <HeroDescription>
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500.
                     </HeroDescription>
-                    <Button>Place an order</Button>
+                    <Button onClick={handleOrderClick}>Place an order</Button>
                     <RatingBlock>
                         <StarsImage src={TrustpilotLogo} alt="Trustpilot" />
                         <ReviewText>
