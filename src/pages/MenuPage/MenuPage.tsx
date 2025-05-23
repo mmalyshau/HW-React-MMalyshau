@@ -1,9 +1,9 @@
-import { ProductList } from "@entities/productList/ProductList";
-import { Tooltip } from "@ui/tooltip/Tooltip";
+import { ProductList } from "@entities";
+import { Tooltip } from "@ui";
 
 import style from "./menuPage.module.scss";
 
-export const MenuPage = ({addToCart}) => {
+const MenuPage = () => {
   return (
     <section className={style.menu__section}>
       
@@ -12,10 +12,12 @@ export const MenuPage = ({addToCart}) => {
             <div className="primary__text">Use our menu to place an order online, or <Tooltip text='+123456789'>phone</Tooltip> our store to place a pickup order. Fast and fresh food.</div>
         </div>
        
-      <ProductList addToCart={addToCart}  />
+      <ProductList />
        
         
         </section>
   );
 
  }
+
+ export default MenuPage;

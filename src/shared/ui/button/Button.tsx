@@ -1,6 +1,20 @@
 import styled from "styled-components";
+import React from "react";
 
-const StyledButton = styled.button`
+type TButtonSize = "small" | "medium" | "large";
+type TButtonVariant = "primary" | "secondary";
+
+type TButtonProps = {
+  children: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  type?: "button" | "submit" | "reset";
+  variant?: TButtonVariant;
+  size?: TButtonSize;
+  className?: string;
+  [key: string]: any;
+};
+
+const StyledButton = styled.button<{ $variant: TButtonVariant; $size: TButtonSize }>`
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +27,9 @@ const StyledButton = styled.button`
   border: none;
   cursor: pointer;
 
-  &[data-variant="primary"] {
+  ${({ $variant }) =>
+    $variant === "primary" &&
+    `
     background-color: var(--color-button-primary-bg);
     color: var(--color-button-primary-text);
 
@@ -26,11 +42,13 @@ const StyledButton = styled.button`
     }
 
     &:active {
-      transform: scale(0.98); 
+      transform: scale(0.98);
     }
-  }
+  `}
 
-  &[data-variant="secondary"] {
+  ${({ $variant }) =>
+    $variant === "secondary" &&
+    `
     outline: 0.0625rem solid var(--color-button-secondary-border-color);
     color: var(--color-button-secondary-text);
     background-color: var(--color-button-secondary-bg);
@@ -43,41 +61,58 @@ const StyledButton = styled.button`
     &:active {
       background-color: var(--color-accent-primary);
       color: var(--color-button-primary-text);
-      transform: scale(0.98); 
+      transform: scale(0.98);
     }
 
     &:focus-visible {
       outline: 0.0625rem solid var(--color-button-secondary-border-color);
     }
-  }
+  `}
 
-  &[data-size="small"] {
+  ${({ $size }) =>
+    $size === "small" &&
+    `
     padding: 0.625rem 0.75rem;
     font-size: 0.875rem;
-  }
+  `}
 
-  &[data-size="medium"] {
+  ${({ $size }) =>
+    $size === "medium" &&
+    `
     padding: 0.625rem 1.6875rem;
-  }
+  `}
 
-  &[data-size="large"] {
+  ${({ $size }) =>
+    $size === "large" &&
+    `
     padding: 1.125rem 2rem;
     font-size: 1.125rem;
-  }
+  `}
 `;
 
-export const Button = ({children, onClick, type = "button", variant = "primary", size = "medium", className = "", ...rest
-}) => {
+const Button = ({
+  children,
+  onClick,
+  type = "button",
+  variant = "primary",
+  size = "medium",
+  className = "",
+  ...rest
+}: TButtonProps) => {
   return (
-      <StyledButton
-          type={type}
-          onClick={onClick}
-          data-variant={variant}
-          data-size={size}
-          className={className}
-          {...rest}
-      >
-        {children}
-      </StyledButton>
+    <StyledButton
+      type={type}
+      $variant={variant}
+      $size={size}
+      className={className}
+      onClick={(e) => {
+        onClick?.(e);
+      }}
+      {...rest}
+    >
+      {children}
+    </StyledButton>
   );
 };
+
+export default Button;
