@@ -1,13 +1,17 @@
 import React from 'react';
-import { useCart } from '@hooks';
+
 import { Button } from '@ui';
 import CartIcon from '@images/icons/cart.svg';
 import style from './cartBtn.module.scss';
 
-const CartBtn: React.FC = () => {
-    const { cart } = useCart();
+import type { RootState } from '@store';
+import { useAppSelector } from '@hooks';
 
-    const cartCount = cart.reduce((acc, item) => acc + item.amount, 0);
+import { TCartItem } from '@types';
+
+const CartBtn: React.FC = () => {
+  const cart = useAppSelector((state: RootState) => state.cart);
+  const cartCount = cart.reduce((acc: number, item: TCartItem) => acc + item.amount, 0);
 
     return (
         <Button

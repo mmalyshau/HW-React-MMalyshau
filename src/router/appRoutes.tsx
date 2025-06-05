@@ -2,14 +2,14 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { LoginPage } from "@pages";
 import { HomePage } from "@pages";
 import { MenuPage } from "@pages";
-import { useAuth } from "@hooks";
+
+import { useAppSelector } from '@hooks'
+import type { RootState } from '@store'
 
 
 
  function AppRoutes() {
-    const { user, loading } = useAuth();
-
-    if (loading) return <div>Loading...</div>;
+    const user = useAppSelector((state: RootState) => state.auth.user);
 
     return (
         <Routes>

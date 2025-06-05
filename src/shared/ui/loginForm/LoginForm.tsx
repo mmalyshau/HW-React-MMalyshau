@@ -51,7 +51,7 @@ const LoginForm: React.FC = () => {
                                 size="large"
                                 value={email.value}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => email.onChange(e)}
-                                onBlur={(e: React.FocusEvent<HTMLInputElement>) => email.onBlur(e)}
+                                onBlur={() => email.onBlur()}
                                 required
                             />
                         </label>
@@ -72,7 +72,7 @@ const LoginForm: React.FC = () => {
                                 size="large"
                                 value={password.value}
                                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => password.onChange(e)}
-                                onBlur={(e: React.FocusEvent<HTMLInputElement>) => password.onBlur(e)}
+                                onBlur={() => password.onBlur()}
                                 required
                             />
                         </label>

@@ -7,15 +7,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build":"tsc && vite build",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
     "firebase": "^11.7.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-firebase-hooks": "^5.1.1",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.6.0",
     "styled-components": "^6.1.17"
   },

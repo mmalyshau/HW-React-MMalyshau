@@ -1,13 +1,15 @@
 import { HeaderLinks } from "@widgets";
-import { CartBtn } from "@ui";
-import {useAuth} from "@hooks";
+import { CartBtn, logoutUser } from "@features";
+import { useAppDispatch } from "@hooks";
+import {useAppSelector} from "@hooks";
 
 import  Logo  from '@images/icons/logo.svg';
 
 import style from "./Header.module.scss";
 
  const Header = () => {
-    const { user, logout } = useAuth();
+   const dispatch = useAppDispatch();
+  const user = useAppSelector((state) => state.auth.user);
   return (
     <header className={style.header}>
       <div className={style.header__container}>
@@ -25,7 +27,7 @@ import style from "./Header.module.scss";
               );
             })}
             {user && (
-                <button onClick={logout} className={style.header__link}>
+                <button onClick={() => dispatch(logoutUser())} className={style.header__link}>
                   Logout
                 </button>
             )}
