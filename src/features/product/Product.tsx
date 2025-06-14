@@ -2,15 +2,17 @@ import React, { useState, useEffect, ChangeEvent } from 'react';
 import style from "./product.module.scss";
 import { Button } from "@ui";
 import { Input } from "@ui";
-import { useCart } from "@hooks";
 import { TProduct } from "@types";
+
+import { useAppDispatch } from '@hooks';
+import { addToCart } from '@features';
 
 interface ProductProps {
   product: TProduct;
 }
  const Product: React.FC<ProductProps> = ({ product }) => {
-  const { addToCart } = useCart();
-  const [amount, setAmount] = useState(0);
+  const dispatch = useAppDispatch();
+   const [amount, setAmount] = useState(0);
 
   useEffect(() => {
     setAmount(0);
@@ -23,7 +25,7 @@ interface ProductProps {
 
   const handleAddToCart = () => {
     if (amount > 0) {
-      addToCart(product, amount);
+      dispatch(addToCart({product: product, amount }));
       setAmount(0);
     }
   };

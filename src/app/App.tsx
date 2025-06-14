@@ -1,8 +1,9 @@
 import React from 'react';
-import { Layout } from "@features";
+import { Layout, useAuthListener } from "@features";
 import { AppRoutes } from "@router";
 
 const App: React.FC = () => {
+    useAuthListener();
     return (
                 <Layout>
                     <AppRoutes />

@@ -5,7 +5,11 @@ import TrustpilotLogo from "@images/icons/trustpilot_icon.svg"
 
 import { Button} from "@ui";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "@hooks";
+
+import { useAppSelector } from "@hooks";
+import { RootState } from "@store";
+
+
 
 const HeroSection = styled.section`
     padding: 100px 120px 140px;
@@ -100,7 +104,7 @@ const ReviewText = styled.p`
 const HomePage = () => {
     const navigate = useNavigate();
 
-    const { user } = useAuth();
+    const user = useAppSelector((state: RootState) => state.auth.user)
 
     const handleOrderClick = () => {
         if (user) {
