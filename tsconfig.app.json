@@ -8,7 +8,6 @@
         "skipLibCheck": true,
         "baseUrl": "./src",
         "paths": {
-            "@context": ["app/context"],
             "@assets": ["assets"],
             "@images": ["assets/images"],
             "@entities": ["entities"],
@@ -26,6 +25,7 @@
             "@utils": ["utils"],
             "@app": ["app"],
             "@store": ["store"],
+            "@context": ["shared/context"],
 
         },
 

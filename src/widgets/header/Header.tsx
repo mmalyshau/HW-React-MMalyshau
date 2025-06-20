@@ -1,15 +1,19 @@
 import { HeaderLinks } from "@widgets";
 import { CartBtn, logoutUser } from "@features";
-import { useAppDispatch } from "@hooks";
-import {useAppSelector} from "@hooks";
+import { useAppDispatch, useAppSelector } from "@hooks";
 
 import  Logo  from '@images/icons/logo.svg';
 
 import style from "./Header.module.scss";
+import { useTheme } from "@context";
+import { NavLink } from "react-router"
 
  const Header = () => {
    const dispatch = useAppDispatch();
-  const user = useAppSelector((state) => state.auth.user);
+   const user = useAppSelector((state) => state.auth.user);
+   
+     const { theme, toggleTheme } = useTheme() ?? {};
+
   return (
     <header className={style.header}>
       <div className={style.header__container}>
@@ -21,9 +25,11 @@ import style from "./Header.module.scss";
             {HeaderLinks.map((link, index) => {
               if (user && link.name === "Login") return null;
               return (
-                  <a key={index} href={link.link} className={style.header__link}>
+                  <NavLink key={index} to={link.link}  className={({ isActive }) =>
+                    `${style.header__link} ${isActive ? style.active : ''}`
+                     }>
                     {link.name}
-                  </a>
+                  </NavLink>
               );
             })}
             {user && (
@@ -31,6 +37,8 @@ import style from "./Header.module.scss";
                   Logout
                 </button>
             )}
+
+            <button className={style.header__link} onClick={toggleTheme}> Switch {theme === 'light' ? 'dark' : 'light'} theme </button>
           </div>
           <CartBtn />
         </nav>
