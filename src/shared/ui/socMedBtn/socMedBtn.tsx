@@ -12,7 +12,7 @@ const socialLinks: SocialLink[] = [
   { icon: "youtube", alt: "YouTube", href: "https://www.youtube.com" }
 ];
 
-const SocialMedia = () => {
+export const SocialMedia = () => {
   return (
     <div className={style.social__media}>
       {socialLinks.map((social, index) => (
@@ -25,5 +25,3 @@ const SocialMedia = () => {
     </div>
   );
 };
-
-export default SocialMedia;

@@ -1,8 +1,8 @@
 import style from './orderPage.module.scss';
-import { OrderForm } from '@ui';
-import { OrderList } from '@entities';
+import { OrderForm } from '@shared/ui/orderForm/OrderForm';
+import { OrderList } from '@entities/orderList/OrderList';
 
-const OrderPage = () => {
+export const OrderPage = () => {
   return (
     <section className={style.orderPage__section}>
       <div className={style.orderPage__container}>
@@ -14,4 +14,3 @@ const OrderPage = () => {
   )
  }
 
-export default OrderPage;

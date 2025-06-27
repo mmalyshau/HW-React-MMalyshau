@@ -1,10 +1,9 @@
-import type { FC } from 'react';
 import Logo from '@images/icons/logo.svg';
-import { SocialMedia } from '@ui';
+import { SocialMedia } from '@ui/socMedBtn/socMedBtn';
 
 import style from './footer.module.scss';
 
-const Footer: FC = () => {
+export const Footer = () => {
   return (
     <footer className={style.footer}>
       <div className={style.footer__Top}>
@@ -54,4 +53,3 @@ const Footer: FC = () => {
   );
 };
 
-export default Footer;

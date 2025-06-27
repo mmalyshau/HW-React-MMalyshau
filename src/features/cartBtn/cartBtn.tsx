@@ -1,14 +1,14 @@
-import { Button } from '@ui';
+import { Button } from '@shared/ui/button/Button';
 import CartIcon from '@images/icons/cart.svg';
 import style from './cartBtn.module.scss';
 
-import type { RootState } from '@store';
-import { useAppSelector } from '@hooks';
+import type { RootState } from '@store/store';
+import { useAppSelector } from '@shared/hooks/useAppSelector';
 
-import { TCartItem } from '@types';
+import { TCartItem } from '@shared/types/TCartItem';
 import { useNavigate } from 'react-router-dom';
 
-const CartBtn = () => {
+export const CartBtn = () => {
   const cart = useAppSelector((state: RootState) => state.cart);
   const cartCount = cart.reduce((acc: number, item: TCartItem) => acc + item.amount, 0);
   const user = useAppSelector((state) => state.auth.user)
@@ -37,4 +37,3 @@ const CartBtn = () => {
     );
 };
 
-export default CartBtn;

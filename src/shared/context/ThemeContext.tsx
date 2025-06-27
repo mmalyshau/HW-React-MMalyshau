@@ -9,7 +9,7 @@ interface IThemeContext {
 
 const ThemeContext = createContext<IThemeContext | undefined>(undefined);
 
-const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const getPreferredTheme = (): Theme => {
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   };
@@ -37,5 +37,4 @@ const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
 const useTheme = () => useContext(ThemeContext);
 
-export default ThemeProvider;
 export { useTheme };

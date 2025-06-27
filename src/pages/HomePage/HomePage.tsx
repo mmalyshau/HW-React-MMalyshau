@@ -3,11 +3,11 @@ import styled from "styled-components";
 import Banner from "@images/banner_homepage.svg";
 import TrustpilotLogo from "@images/icons/trustpilot_icon.svg"
 
-import { Button} from "@ui";
+import { Button} from "@shared/ui/button/Button";
 import { useNavigate } from "react-router-dom";
 
-import { useAppSelector } from "@hooks";
-import { RootState } from "@store";
+import { useAppSelector } from '@shared/hooks/useAppSelector';
+import { RootState } from '@store/store';
 
 
 
@@ -102,7 +102,7 @@ const ReviewText = styled.p`
   font-family: 'Inter', sans-serif;
 `;
 
-const HomePage = () => {
+export const HomePage = () => {
     const navigate = useNavigate();
 
     const user = useAppSelector((state: RootState) => state.auth.user)
@@ -140,4 +140,3 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;

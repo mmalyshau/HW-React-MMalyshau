@@ -1,11 +1,11 @@
 import { useState, useMemo, useEffect } from "react";
-import { Product } from "@features";
-import { Button } from "@ui";
-import { useFetch } from "@hooks";
+import { Product } from '@features/product/Product';
+import { Button } from "@ui/button/Button";
+import { useFetch } from '@shared/hooks/useFetch';
 import style from "./productList.module.scss";
-import { TProduct } from "@types";
+import type { TProduct } from '@shared/types/TPtoduct';
 
- const ProductList = () => {
+ export const ProductList = () => {
   const [itemsPerPage, setItemsPerPage] = useState<number>(6);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [filteredItems, setFilteredItems] = useState<TProduct[]>([]);
@@ -87,4 +87,3 @@ import { TProduct } from "@types";
   );
 };
 
-export default ProductList;

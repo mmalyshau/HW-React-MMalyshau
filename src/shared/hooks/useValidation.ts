@@ -5,7 +5,7 @@ type TValidations = {
     isValid?: boolean;
 }
 
- const useValidation = (value: string, validations: TValidations) => {
+ export const useValidation = (value: string, validations: TValidations) => {
     const [isEmpty, setIsEmpty] = useState(false);
     const [isEmail, setIsEmail] = useState(false);
     const [isValid, setIsValid] = useState(false);
@@ -40,4 +40,3 @@ type TValidations = {
     };
 };
 
-export default useValidation;

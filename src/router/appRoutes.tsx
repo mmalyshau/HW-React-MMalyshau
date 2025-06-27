@@ -1,10 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { HomePage, LoginPage, MenuPage, OrderPage, NotFoundPage } from "@pages";
-import { useAppSelector } from "@hooks";
-import { PrivateRoutes } from "@router"; 
-import type { RootState } from "@store";
+import { HomePage } from "@pages/HomePage/HomePage";
+import { LoginPage } from "@pages/LoginPage/LoginPage";
+import { MenuPage } from "@pages/MenuPage/MenuPage";
+import { OrderPage } from "@pages/OrderPage/OrderPage";
+import { NotFoundPage } from "@pages/NotFoundPage/NotFoundPage";
+import { useAppSelector } from "@shared/hooks/useAppSelector";
+import { PrivateRoutes } from "@router/privateRoutes"; 
+import type { RootState } from "@store/store";
 
-function AppRoutes() {
+export function AppRoutes() {
   const user = useAppSelector((state: RootState) => state.auth.user);
 
   return (
@@ -27,4 +31,3 @@ function AppRoutes() {
   );
 }
 
-export default AppRoutes;

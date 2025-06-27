@@ -1,11 +1,11 @@
-import { useEffect } from 'react';
-import { auth } from '@config';
-import { onAuthStateChanged } from 'firebase/auth';
-import { useAppDispatch } from '@hooks';
-import { setUserAuth } from '@features';
-import { mapFirebaseUserToAppUser } from '@utils';
+import { useEffect } from "react";
+import { auth } from "@shared/config/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useAppDispatch } from "@shared/hooks/useAppDispatch";
+import { setUserAuth } from "@features/auth/userAuthSlice";
+import { mapFirebaseUserToAppUser } from "@utils/firebaseHelper";
 
-const useUserAuthListener = () => {
+export const useUserAuthListener = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -17,5 +17,3 @@ const useUserAuthListener = () => {
     return () => unsubscribe();
   }, [dispatch]);
 };
-
-export default useUserAuthListener;

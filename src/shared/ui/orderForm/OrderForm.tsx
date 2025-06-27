@@ -1,9 +1,14 @@
 import style from './orderForm.module.scss';
-import { Button, Input } from '@ui';
-import { useAppDispatch, useAppSelector, useForm, useValidation } from '@hooks';
-import { clearCartItems } from '@features';
+import { Button } from '@ui/button/Button';
+import { Input } from '@ui/input/Input';
+import { useAppDispatch } from '@hooks/useAppDispatch';
+import { useAppSelector } from '@hooks/useAppSelector';
+import { useForm } from '@hooks/useForm';
+import { useValidation } from '@hooks/useValidation';
+import { clearCartItems } from '@features/cartBtn/cartBtnSlice';
+import type { TCartItem } from '@shared/types/TCartItem';
 
-const OrderForm = () => {
+export const OrderForm = () => {
   const street = useForm('');
   const streetValidation = useValidation(street.value, { isEmpty: true });
 
@@ -38,7 +43,7 @@ const OrderForm = () => {
             email: user.email,
             street: street.value,
             house: house.value,
-            cart: cart.map((item) => ({
+            cart: cart.map((item: TCartItem) => ({
               productId: item.Product.id,
               amount: item.amount,
             })),
@@ -49,6 +54,8 @@ const OrderForm = () => {
       if (!response.ok) throw new Error('Order placement failed.');
 
       dispatch(clearCartItems());
+      alert(`Succsess! Your order is on the way to ${street.value}, house ${house.value}`);
+
       street.reset();
       house.reset();
     } catch (error) {
@@ -107,5 +114,3 @@ const OrderForm = () => {
 );
 
 };
-
-export default OrderForm;

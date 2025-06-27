@@ -1,15 +1,16 @@
-import { Button, Input } from '@ui';
+import { Button } from '@shared/ui/button/Button';
+import { Input } from '@shared/ui/input/Input';
 import style from './orderedProduct.module.scss';
 
-import { TCartItem } from '@types';
-import { useAppDispatch } from '@hooks';
-import { removeFromCart, updateCartItemAmount } from '@features';
+import { TCartItem } from '@shared/types/TCartItem';
+import { useAppDispatch } from '@shared/hooks/useAppDispatch';
+import { removeFromCart, updateCartItemAmount } from '@features/cartBtn/cartBtnSlice';
 
 interface OrderedProductProps {
   item: TCartItem;
 }
 
-const OrderedProduct = ({ item }:OrderedProductProps) => {
+export const OrderedProduct = ({ item }: OrderedProductProps) => {
   const dispatch = useAppDispatch();
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,5 +59,3 @@ const OrderedProduct = ({ item }:OrderedProductProps) => {
     </div>
   );
 };
-
-export default OrderedProduct;

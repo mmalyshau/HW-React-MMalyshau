@@ -3,11 +3,9 @@ export type HeaderLink = {
   link: string;
 };
 
- const HeaderLinks: HeaderLink[] = [
+ export const HeaderLinks: HeaderLink[] = [
   { name: 'Home', link: '/' },
   { name: 'Menu', link: '/menu' },
   { name: 'Company', link: '/company' },
   { name: 'Login', link: '/login' },
 ];
-
-export default HeaderLinks;

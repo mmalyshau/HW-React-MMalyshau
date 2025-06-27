@@ -1,14 +1,14 @@
 import style from './orderList.module.scss';
-import { OrderedProduct } from '@features';
-import { useAppSelector } from '@hooks';
+import { OrderedProduct } from '@features/orderedProduct/OrderedProduct';
+import { useAppSelector } from '@shared/hooks/useAppSelector';
 
-const OrderList: React.FC = () => {
+export const OrderList= () => {
   const cart = useAppSelector((state) => state.cart);
 
   return (
     <div className={style.listWrapper}>
       {cart.length > 0 ? (
-        cart.map((item) => <OrderedProduct key={item.Product.id} item={item} />)
+        cart.map((item: any) => <OrderedProduct key={item.Product.id} item={item} />)
       ) : (
         <p className="1">You haven't added anything to your cart</p>
       )}
@@ -16,4 +16,4 @@ const OrderList: React.FC = () => {
   );
 };
 
-export default OrderList;
+

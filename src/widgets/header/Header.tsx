@@ -1,14 +1,16 @@
-import { HeaderLinks } from "@widgets";
-import { CartBtn, logoutUser } from "@features";
-import { useAppDispatch, useAppSelector } from "@hooks";
+import { HeaderLinks } from "@widgets/header/HeaderLinks";
+import { CartBtn } from "@features/cartBtn/cartBtn";
+import { logoutUser } from "@features/auth/userAuthSlice";
+import { useAppDispatch } from "@hooks/useAppDispatch";
+import { useAppSelector } from "@hooks/useAppSelector";
 
 import  Logo  from '@images/icons/logo.svg';
 
 import style from "./Header.module.scss";
-import { useTheme } from "@context";
+import { useTheme } from "@shared/context/ThemeContext";
 import { NavLink } from "react-router"
 
- const Header = () => {
+ export const Header = () => {
    const dispatch = useAppDispatch();
    const user = useAppSelector((state) => state.auth.user);
    
@@ -47,4 +49,3 @@ import { NavLink } from "react-router"
   );
 };
 
-export default Header;

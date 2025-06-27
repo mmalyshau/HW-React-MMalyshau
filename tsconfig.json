@@ -1,7 +1,64 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ],
+  "compilerOptions": {
+      "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+      "target": "ES2020",
+      "useDefineForClassFields": true,
+      "lib": ["ES2020", "DOM", "DOM.Iterable"],
+      "module": "ESNext",
+      "skipLibCheck": true,
+      "paths": {
+          "@assets": ["./src/assets"],
+          "@images": ["./src/assets/images"],
+          "@entities": ["./src/entities"],
+          "@features": ["./src/features"],
+          "@pages": ["./src/pages"],
+          "@router": ["./src/router"],
+          "@shared": ["./src/shared"],
+          "@config": ["./src/shared/config"],
+          "@hooks": ["./src/shared/hooks"],
+          "@lib": ["./src/shared/lib"],
+          "@types": ["./src/shared/types"],
+          "@ui": ["./src/shared/ui"],
+          "@widgets": ["./src/widgets"],
+          "@styles": ["./src/styles"],
+          "@utils": ["./src/utils"],
+          "@app": ["./src/app"],
+          "@store": ["./src/store"],
+          "@context": ["./src/shared/context"],
+
+          "@assets/*": ["./src/assets/*"],
+          "@images/*": ["./src/assets/images/*"],
+          "@entities/*": ["./src/entities/*"],
+          "@features/*": ["./src/features/*"],
+          "@pages/*": ["./src/pages/*"],
+          "@router/*": ["./src/router/*"],
+          "@shared/*": ["./src/shared/*"],
+          "@config/*": ["./src/shared/config/*"],
+          "@hooks/*": ["./src/shared/hooks/*"],
+          "@lib/*": ["./src/shared/lib/*"],
+          "@types/*": ["./src/shared/types/*"],
+          "@ui/*": ["./src/shared/ui/*"],
+          "@widgets/*": ["./src/widgets/*"],
+          "@styles/*": ["./src/styles/*"],
+          "@utils/*": ["./src/utils/*"],
+          "@app/*": ["./src/app/*"],
+          "@store/*": ["./src/store/*"],
+          "@context/*": ["./src/shared/context/*"]
+
+      },
+      "moduleResolution": "bundler",
+      "allowImportingTsExtensions": true,
+      "isolatedModules": true,
+      "moduleDetection": "force",
+      "noEmit": true,
+      "jsx": "react-jsx",
+
+      "strict": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "noFallthroughCasesInSwitch": true,
+      "noUncheckedSideEffectImports": true
+  },
+
+  "include": ["src"]
 }

@@ -1,7 +1,7 @@
-import { Header } from "@widgets";
-import { Footer } from "@widgets";
+import { Header } from "@widgets/header/Header";
+import { Footer } from "@widgets/footer/Footer";
 
- const Layout: React.FC<React.PropsWithChildren> = ({children}) => {
+ export const Layout: React.FC<React.PropsWithChildren> = ({children}) => {
         return (
             <>
                 <Header/>
@@ -11,4 +11,3 @@ import { Footer } from "@widgets";
         )
     }
 
-    export default Layout;

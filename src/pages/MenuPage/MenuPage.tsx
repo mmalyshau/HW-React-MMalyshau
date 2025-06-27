@@ -1,9 +1,9 @@
-import { ProductList } from "@entities";
-import { Tooltip } from "@ui";
+import { ProductList } from '@entities/productList/ProductList';
+import { Tooltip } from "@ui/tooltip/Tooltip";
 
 import style from "./menuPage.module.scss";
 
-const MenuPage = () => {
+export const MenuPage = () => {
   return (
     <section className={style.menu__section}>
       
@@ -19,5 +19,3 @@ const MenuPage = () => {
   );
 
  }
-
- export default MenuPage;

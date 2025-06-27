@@ -1,6 +1,6 @@
 import {useState} from "react";
 
- const useForm = (initial: string) => {
+ export const useForm = (initial: string) => {
     const [value, setValue] = useState('');
     const [isDirty, setIsDirty] = useState(false);
 
@@ -27,5 +27,4 @@ import {useState} from "react";
     }
 }
 
-export default useForm;
 

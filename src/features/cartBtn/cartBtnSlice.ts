@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TCartItem, TProduct } from "@types";
+import { TCartItem } from "@shared/types/TCartItem";
+import { TProduct } from "@shared/types/TPtoduct";
 
-type CartState = TCartItem[];
+export type CartState = TCartItem[];
 
 const getInitialCartState = (): CartState => {
   try {
