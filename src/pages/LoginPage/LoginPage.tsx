@@ -1,8 +1,8 @@
 import style from './loginPage.module.scss'
 
-import { LoginForm } from "@ui";
+import { LoginForm } from '@shared/ui/loginForm/LoginForm';
 
-const LoginPage = () => {
+export const LoginPage = () => {
     return (
         <section className={style.loginPage}>
             <div className={style.loginPage__wrapper}>
@@ -12,5 +12,3 @@ const LoginPage = () => {
         </section>
     );
 }
-
-export default LoginPage;

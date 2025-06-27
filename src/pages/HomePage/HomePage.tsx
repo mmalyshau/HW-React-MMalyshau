@@ -3,11 +3,11 @@ import styled from "styled-components";
 import Banner from "@images/banner_homepage.svg";
 import TrustpilotLogo from "@images/icons/trustpilot_icon.svg"
 
-import { Button} from "@ui";
+import { Button} from "@shared/ui/button/Button";
 import { useNavigate } from "react-router-dom";
 
-import { useAppSelector } from "@hooks";
-import { RootState } from "@store";
+import { useAppSelector } from '@shared/hooks/useAppSelector';
+import { RootState } from '@store/store';
 
 
 
@@ -18,19 +18,20 @@ const HeroSection = styled.section`
     z-index: 1;
     overflow: hidden;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1440' height='820' viewBox='0 0 1440 820' fill='none'><path opacity='0.87' d='M1440 0H0L175.973 553.961L1440 820V0Z' fill='%23F5FBFC'/></svg>");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: top center;
-        z-index: -1;
-  }
+  &::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background-color: var(--figure-bg-color); 
+
+  mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1440' height='820' viewBox='0 0 1440 820'><path d='M1440 0H0L175.973 553.961L1440 820V0Z' fill='black'/></svg>");
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  mask-position: center;
+}
+
 `;
 
 const HeroContentWrapper = styled.div`
@@ -101,7 +102,7 @@ const ReviewText = styled.p`
   font-family: 'Inter', sans-serif;
 `;
 
-const HomePage = () => {
+export const HomePage = () => {
     const navigate = useNavigate();
 
     const user = useAppSelector((state: RootState) => state.auth.user)
@@ -139,4 +140,3 @@ const HomePage = () => {
     );
 };
 
-export default HomePage;

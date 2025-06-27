@@ -1,4 +1,4 @@
-import {TProduct} from "./index.ts";
+import type {TProduct} from "./TPtoduct";
 
  export type TCartItem = {
     Product: TProduct;

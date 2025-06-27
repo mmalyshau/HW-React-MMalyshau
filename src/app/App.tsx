@@ -1,13 +1,17 @@
 import React from 'react';
-import { Layout, useAuthListener } from "@features";
-import { AppRoutes } from "@router";
+import  { useUserAuthListener }  from "@features/auth/useAuthListener";
+import  { Layout } from "@features/layout/Layout";
+import  { AppRoutes }  from "@router/appRoutes";
+import  { ThemeProvider } from '@context/ThemeContext';
 
 const App: React.FC = () => {
-    useAuthListener();
-    return (
-                <Layout>
-                    <AppRoutes />
-                </Layout>
+    useUserAuthListener();
+  return (
+    <ThemeProvider>
+       <Layout>
+          <AppRoutes />
+      </Layout>
+    </ThemeProvider>
     );
   }
 

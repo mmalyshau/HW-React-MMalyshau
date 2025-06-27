@@ -90,7 +90,7 @@ const StyledButton = styled.button<{ $variant: TButtonVariant; $size: TButtonSiz
   `}
 `;
 
-const Button = ({
+export const Button = ({
   children,
   onClick,
   type = "button",
@@ -114,5 +114,3 @@ const Button = ({
     </StyledButton>
   );
 };
-
-export default Button;

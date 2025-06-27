@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { signOut } from 'firebase/auth';
-import { auth } from '@config';
+import { createSlice, PayloadAction, createAsyncThunk } from "@reduxjs/toolkit";
+import { signOut } from "firebase/auth";
+import { auth } from "@shared/config/firebase";
 
 export type TUserAuth = {
   uid: string;
@@ -8,7 +8,7 @@ export type TUserAuth = {
   displayName: string | null;
 };
 
-type TUserAuthState = {
+export type TUserAuthState = {
   user: TUserAuth | null;
 };
 
@@ -16,12 +16,12 @@ const initialState: TUserAuthState = {
   user: null,
 };
 
-export const logoutUser = createAsyncThunk('userAuth/logout', async () => {
+export const logoutUser = createAsyncThunk("userAuth/logout", async () => {
   await signOut(auth);
 });
 
-const userAuthSlice = createSlice({
-  name: 'userAuth',
+export const userAuthSlice = createSlice({
+  name: "userAuth",
   initialState,
   reducers: {
     setUserAuth(state, action: PayloadAction<TUserAuth | null>) {
@@ -36,4 +36,5 @@ const userAuthSlice = createSlice({
 });
 
 export const { setUserAuth } = userAuthSlice.actions;
+
 export default userAuthSlice.reducer;

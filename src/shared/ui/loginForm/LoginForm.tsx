@@ -1,15 +1,16 @@
 import React, { FormEvent } from 'react';
 import style from './loginForm.module.scss';
 
-import { Input, Button } from '@ui'; 
-import { useForm } from '@hooks';
-import { useValidation } from '@hooks';
+import { Input } from '@ui/input/Input';
+import { Button } from '@ui/button/Button';
+import { useForm } from '@hooks/useForm';
+import { useValidation } from '@hooks/useValidation';
 
-import { auth } from '@config';
+import { auth } from '@config/firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
-const LoginForm: React.FC = () => {
+export const LoginForm = () => {
     const email = useForm('');
     const emailValidation = useValidation(email.value, { isEmpty: true, isEmail: true });
 
@@ -93,5 +94,3 @@ const LoginForm: React.FC = () => {
         </form>
     );
 };
-
-export default LoginForm;

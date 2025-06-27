@@ -1,16 +1,18 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import  { useState, useEffect, ChangeEvent } from 'react';
 import style from "./product.module.scss";
-import { Button } from "@ui";
-import { Input } from "@ui";
-import { TProduct } from "@types";
+import { Button } from '@shared/ui/button/Button';
+import { Input } from '@shared/ui/input/Input';
+import type { TProduct } from "@shared/types/TPtoduct";
 
-import { useAppDispatch } from '@hooks';
-import { addToCart } from '@features';
+import { useAppDispatch } from '@shared/hooks/useAppDispatch';
+import { addToCart } from '@features/cartBtn/cartBtnSlice';
 
 interface ProductProps {
   product: TProduct;
 }
- const Product: React.FC<ProductProps> = ({ product }) => {
+ 
+
+export const Product = ({ product }: ProductProps) => {
   const dispatch = useAppDispatch();
    const [amount, setAmount] = useState(0);
 
@@ -64,4 +66,3 @@ interface ProductProps {
   );
 };
 
-export default Product;

@@ -8,12 +8,12 @@ interface IInputProps {
     [x: string]: any;
 }
 
-const Input: React.FC<IInputProps> = ({
+export const Input = ({
   type = 'text',
   size = 'medium',
   className = '',
   ...props
-}) => {
+}:IInputProps) => {
   return (
     <input
       type={type}
@@ -22,6 +22,4 @@ const Input: React.FC<IInputProps> = ({
     />
   );
 };
-
-export default Input;
 

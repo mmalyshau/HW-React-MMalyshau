@@ -6,7 +6,7 @@ interface TooltipProps {
   text: string;
 }
 
- const Tooltip = ({ children, text }: TooltipProps) => {
+export const Tooltip = ({ children, text }: TooltipProps) => {
   return (
     <div className={styles.tooltip}>
       {children}
@@ -14,5 +14,3 @@ interface TooltipProps {
     </div>
   );
 };
-
-export default Tooltip;
