@@ -71,8 +71,8 @@ import type { TProduct } from '@shared/types/TPtoduct';
         {filteredItems.slice(0, itemsPerPage).map((product) => (
           <Product key={product.id} product={product} />
         ))}
-
-        {itemsPerPage < filteredItems.length && (
+      </div>
+       {itemsPerPage < filteredItems.length && (
           <Button
             variant="primary"
             size="medium"
@@ -82,7 +82,6 @@ import type { TProduct } from '@shared/types/TPtoduct';
             See more
           </Button>
         )}
-      </div>
     </div>
   );
 };
