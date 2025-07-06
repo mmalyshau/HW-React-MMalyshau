@@ -3,7 +3,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: var(--color-light);
+  background-color: var(--color-header);
 
   &__logo {
     display: block;
@@ -37,6 +37,10 @@
         &:hover {
           color: var(--color-accent-primary);
         }
+        &.active {
+          color: var(--color-accent-primary);
+        }
+
       }
     }
   }

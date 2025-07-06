@@ -4,7 +4,13 @@
   gap: 1.5rem;
 }
 
-.border{
+.href {
+  display: inline-block; 
+  text-decoration: none;
+  color: inherit;
+}
+
+.border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,4 +19,36 @@
   background: transparent;
   border-radius: 100px;
   outline: 0.0625rem solid rgba(126, 130, 143, 0.30);
+  transition: outline-color 0.3s ease;
+
+  &:hover {
+    outline-color: var(--social-media-color);
+  }
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  background-color: var(--social-media-color); 
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  transition: background-color 0.3s ease;
+}
+
+.link:hover .icon {
+  background-color: var(--social-media-hover-color, var(--social-media-color));
+}
+
+.inst {
+  mask-image: url("@images/icons/inst.svg");
+}
+
+.x {
+  mask-image: url("@images/icons/x.svg");
+}
+
+.youtube {
+  mask-image: url("@images/icons/youtube.svg");
 }
